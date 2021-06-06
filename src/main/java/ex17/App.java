@@ -10,37 +10,73 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
 
-        Scanner gender = new Scanner(System.in);
+        double gender = 0;
         System.out.print("Enter a 1 is you are male or a 2 if you are female: ");
-        String genderS = gender.nextLine();
-        int genderI = Integer.parseInt(genderS);
+        Scanner sc = new Scanner(System.in);
+        if(sc.hasNextInt()) {
+            gender = sc.nextDouble();
+            if(gender>0)
+                System.out.print("");
+            else {
+                System.out.print("");
+            }
+        }else {
+            System.out.println("Please Enter Valid Integer");
+        }
 
-        Scanner ounces = new Scanner(System.in);
+        double ounces = 0;
         System.out.print("How many ounces of alcohol did you have? ");
-        String ouncesS = gender.nextLine();
-        int ouncesI = Integer.parseInt(ouncesS);
+        Scanner scc = new Scanner(System.in);
+        if(sc.hasNextInt()) {
+            ounces = scc.nextDouble();
+            if(ounces>0)
+                System.out.print("");
+            else {
+                System.out.print("");
+            }
+        }else {
+            System.out.println("Please Enter Valid Integer");
+        }
 
-        Scanner weight = new Scanner(System.in);
+        double weight = 0;
         System.out.print("What is your weight, in pounds? ");
-        String weightS = weight.nextLine();
-        int weightI = Integer.parseInt(weightS);
+        Scanner sc3 = new Scanner(System.in);
+        if(sc.hasNextInt()) {
+            weight = sc3.nextDouble();
+            if(weight>0)
+                System.out.print("");
+            else {
+                System.out.print("");
+            }
+        }else {
+            System.out.println("Please Enter Valid Integer");
+        }
 
-        Scanner hours = new Scanner(System.in);
+        double hours = 0;
         System.out.print("How many hours has it been since your last drink? ");
-        String hoursS = hours.nextLine();
-        int hoursI = Integer.parseInt(hoursS);
+        Scanner sc4 = new Scanner(System.in);
+        if(sc.hasNextInt()) {
+            hours = sc4.nextDouble();
+            if(hours>0)
+                System.out.print("");
+            else {
+                System.out.print("");
+            }
+        }else {
+            System.out.println("Please Enter Valid Integer");
+        }
 
         float adr;
 
-        if(genderI == 1){
+        if(gender == 1){
             adr = (float) 0.73;
         } else {
             adr = (float) 0.66;
         }
 
-        double BAC1 = (ouncesI * 5.14 / weightI * adr) - 0.015 * hoursI;
+        double BAC1 = (ounces * 5.14 / weight * adr) - 0.015 * hours;
 
-        System.out.format("Your BAC is %f", BAC1);
+        System.out.format("Your BAC is %f\n", BAC1);
 
         if(BAC1 > 0.08){
             System.out.format("It is not legal for you to drive.\n");
